@@ -38,3 +38,7 @@ Thumbs.db
 # Local mining outputs
 out/
 .audit/
+
+# memory tracker artifacts
+.mimirs/
+
