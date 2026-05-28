@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sublimate"
+version = "0.1.0"
+description = "Distill Claude Code session history into reusable Workflow scripts."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Nick Krzemienski" },
+]
+keywords = [
+    "claude-code",
+    "workflows",
+    "session-mining",
+    "agentic-development",
+]
+dependencies = [
+    "jinja2>=3.1",
+]
+
+[project.scripts]
+workflow-distill = "sublimate.cli:main"
+
+[project.urls]
+Homepage = "https://withagents.dev/products/sublimate"
+Source = "https://github.com/krzemienski/sublimate"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sublimate"]

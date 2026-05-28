@@ -1,0 +1,13 @@
+{
+  "name": "sublimate",
+  "version": "0.1.0",
+  "description": "Distill Claude Code session history into reusable Workflow scripts. Pattern-mining for agentic engineers.",
+  "author": "Nick Krzemienski",
+  "license": "MIT",
+  "repository": "https://github.com/krzemienski/sublimate",
+  "homepage": "https://workflows.withagents.dev",
+  "skills": ["sublimate"],
+  "commands": [],
+  "hooks": [],
+  "agents": []
+}

@@ -1,0 +1,16 @@
+export const meta = {
+  name: '{{ name | e_js }}',
+  description: '{{ description | e_js }}',
+  phases: [
+{% for p in phases %}    { title: '{{ p.title | e_js }}', detail: '{{ p.detail | e_js }}' },
+{% endfor %}  ],
+}
+
+{% for p in phases %}
+phase('{{ p.title | e_js }}')
+{% if p.agents|length > 1 %}await parallel([
+{% for a in p.agents %}  () => agent('{{ a.prompt | e_js }}', { label: '{{ a.label | e_js }}', phase: '{{ p.title | e_js }}' }),
+{% endfor %}])
+{% else %}{% for a in p.agents %}await agent('{{ a.prompt | e_js }}', { label: '{{ a.label | e_js }}', phase: '{{ p.title | e_js }}' })
+{% endfor %}{% endif %}
+{% endfor %}
