@@ -1,0 +1,24 @@
+{
+  "name": "sublimate-marketplace",
+  "description": "Sublimate plugin distribution",
+  "owner": {
+    "name": "Nick Krzemienski",
+    "email": "nick@krzemienski.com"
+  },
+  "plugins": [
+    {
+      "name": "sublimate",
+      "description": "Distill Claude Code session history into reusable Workflow scripts and Skills.",
+      "version": "0.2.0",
+      "source": "./",
+      "author": {
+        "name": "Nick Krzemienski"
+      },
+      "keywords": [
+        "session-mining",
+        "workflows",
+        "skills"
+      ]
+    }
+  ]
+}

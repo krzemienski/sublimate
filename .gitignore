@@ -42,3 +42,4 @@ out/
 # memory tracker artifacts
 .mimirs/
 
+examples/.mimirs/

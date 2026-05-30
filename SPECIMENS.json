@@ -1,0 +1,140 @@
+{
+  "schema_version": "2",
+  "generated_from": "Live /sublimate:distill dogfood run, not a direct miner call",
+  "run": {
+    "date": "2026-05-28",
+    "corpus": "blog-series",
+    "corpus_dir": "/Users/nick/.claude/projects/-Users-nick-Desktop-blog-series",
+    "sessions_sampled": 500,
+    "sessions_total_in_corpus": 2067,
+    "clusters_found": 17,
+    "candidates_emitted": 8,
+    "tier_breakdown": "6 SKILL + 1 SUBAGENT + 1 WORKFLOW",
+    "skipped": "5 SKIP, 4 NEEDS_MORE_SIGNAL",
+    "miner_runtime_seconds": 1.36,
+    "full_chain_wallclock": "~10m 28s (mine + curate + 8 distillers + lint + report)",
+    "transcript": "blog-series/plans/260528-2330-sublimate-v0.2-pivot/.audit/k-transcript.jsonl",
+    "stage7_report": "blog-series/plans/260528-2330-sublimate-v0.2-pivot/.audit/k3-distill-complete.txt",
+    "curation": "blog-series/plans/260528-2330-sublimate-v0.2-pivot/.audit/k-emitted/curation.json"
+  },
+  "specimens": [
+    {
+      "name": "dream-memory-consolidation",
+      "cluster_id": "1",
+      "tier": "SKILL",
+      "session_count": 361,
+      "verdict": "KEEP",
+      "sample_cited": "018eeda4-fbb2-4f94-a1f1-7240da424dcf.jsonl",
+      "emitted_artifact": "cluster-1/SKILL.md",
+      "highlighted_in_post": true,
+      "rationale": "/dream memory-consolidation procedure (Orient/Gather/Consolidate/Prune) recurring across 361 sessions; ls+Read+grep+Write to memory dir. Coherent multi-phase procedure Claude orchestrates turn-by-turn, not background-script work."
+    },
+    {
+      "name": "stitch-hero-batch",
+      "cluster_id": "3",
+      "tier": "SKILL",
+      "session_count": 6,
+      "verdict": "KEEP",
+      "sample_cited": "04a12e93-81de-4a6e-ad9a-8259b893e5a1/subagents/agent-a1537c21c1c99b521.jsonl",
+      "emitted_artifact": "cluster-3/SKILL.md",
+      "highlighted_in_post": false,
+      "rationale": "Stitch design generation; 6x consecutive mcp__stitch__generate_screen_from_text — single-phase scoped procedure."
+    },
+    {
+      "name": "file-writer-worker",
+      "cluster_id": "8",
+      "tier": "SUBAGENT",
+      "session_count": 12,
+      "verdict": "KEEP",
+      "sample_cited": "239ce6ee-467a-4437-914d-1cb51260c640/subagents/workflows/wf_20d2bf84-f00/agent-a12d5a2eb14aef09a.jsonl",
+      "emitted_artifact": "cluster-8/AGENT.md",
+      "highlighted_in_post": true,
+      "rationale": "workflow-subagent given one Write directive — 12 sibling spawns from parent workflow each writing one file. Single repeated role. Canonical SUBAGENT — Task-tool one-shot. If forced to WORKFLOW the runtime would wrap a single-task pattern in a checkpoint scaffold for nothing."
+    },
+    {
+      "name": "parallel-file-write-with-verify",
+      "cluster_id": "9",
+      "tier": "WORKFLOW",
+      "session_count": 6,
+      "verdict": "KEEP",
+      "sample_cited": "239ce6ee-467a-4437-914d-1cb51260c640/subagents/workflows/wf_5176ec98-1e1/agent-a72dccfcec0c806fe.jsonl",
+      "emitted_artifact": "cluster-9.workflow.js",
+      "highlighted_in_post": true,
+      "rationale": "workflow-subagent fan-outs from parent workflows with verify-pass siblings — multi-phase fan-out + checkpoint Workflow repeated 6x. The only Workflow-tier specimen blog-series emitted. WORKFLOW requires multi-phase fan-out repeated 5+ times; cluster 9 has exactly that."
+    },
+    {
+      "name": "audit-e2e",
+      "cluster_id": "11",
+      "tier": "SKILL",
+      "session_count": 6,
+      "verdict": "KEEP",
+      "sample_cited": "30bd71d4-536b-4608-9db2-b7c61ea9a5f9/subagents/agent-a0e6cf9fa2bece81b.jsonl",
+      "emitted_artifact": "cluster-11/SKILL.md",
+      "highlighted_in_post": true,
+      "rationale": "audit-e2e team worker; per-journey chrome-devtools protocol (new_page → screenshot → snapshot → select_page → close_page); 6 sessions. Distiller extracted the new_page→list_pages→select_page→snapshot about:blank pitfall + 5 journey shapes + FAIL protocol from two real team-trial transcripts."
+    },
+    {
+      "name": "audit-a11y",
+      "cluster_id": "12",
+      "tier": "SKILL",
+      "session_count": 5,
+      "verdict": "KEEP",
+      "sample_cited": "30bd71d4-536b-4608-9db2-b7c61ea9a5f9/subagents/agent-a11e7ccaf75e25a7e.jsonl",
+      "emitted_artifact": "cluster-12/SKILL.md",
+      "highlighted_in_post": false,
+      "rationale": "audit-a11y WCAG worker; per-route (new_page → resize_page → lighthouse_audit → evaluate_script); 5 sessions."
+    },
+    {
+      "name": "audit-perf",
+      "cluster_id": "13",
+      "tier": "SKILL",
+      "session_count": 5,
+      "verdict": "KEEP",
+      "sample_cited": "30bd71d4-536b-4608-9db2-b7c61ea9a5f9/subagents/agent-a31152c4822f86ca0.jsonl",
+      "emitted_artifact": "cluster-13/SKILL.md",
+      "highlighted_in_post": false,
+      "rationale": "audit-perf worker; per-route (new_page → performance_start_trace → lighthouse_audit → close_page); CWV trace, 5 sessions."
+    },
+    {
+      "name": "audit-responsive",
+      "cluster_id": "14",
+      "tier": "SKILL",
+      "session_count": 5,
+      "verdict": "KEEP",
+      "sample_cited": "30bd71d4-536b-4608-9db2-b7c61ea9a5f9/subagents/agent-a4a3c1c27c508e872.jsonl",
+      "emitted_artifact": "cluster-14/SKILL.md",
+      "highlighted_in_post": false,
+      "rationale": "audit-responsive worker iterating 8 breakpoints x routes (new_page → resize_page → take_screenshot → evaluate_script → close_page); 5 sessions."
+    }
+  ],
+  "cross_corpus": [
+    {
+      "corpus": "yt-transition-shorts-detector",
+      "sessions_sampled": 500,
+      "clusters_found": 13,
+      "notable": "cluster-5 size=18 top pattern Read -> StructuredOutput — the canonical SUBAGENT classification shape, rediscovered by the miner from raw JSONL (matches the hand-named vfr-code-classify from v0.1).",
+      "evidence": "blog-series/plans/260528-2330-sublimate-v0.2-pivot/.audit/m-yt/clusters.json"
+    },
+    {
+      "corpus": "ils-ios",
+      "sessions_sampled": 124,
+      "clusters_found": 9,
+      "notable": "Only 1 cluster large enough to emit. iOS sessions are more idiosyncratic — the miner correctly returns 'nothing here' rather than fabricating patterns. Honesty by mechanism.",
+      "evidence": "blog-series/plans/260528-2330-sublimate-v0.2-pivot/.audit/m-ils/clusters.json"
+    }
+  ],
+  "polished": [
+    "examples/dream-memory-consolidation-SKILL.md",
+    "examples/parallel-file-write-with-verify.workflow.js",
+    "examples/file-writer-worker-SUBAGENT.md",
+    "examples/audit-e2e-SKILL.md"
+  ],
+  "deleted_fakes": {
+    "note": "v0.1 (commit 15ff750) shipped three hand-written example workflows presented as discovered specimens. They were guesses dressed as evidence. Deleted and replaced with the dogfood-mined specimens above.",
+    "files": [
+      "examples/post-cover.workflow.js",
+      "examples/audit-verify-ship.workflow.js",
+      "examples/weekly-retro.workflow.js"
+    ]
+  }
+}

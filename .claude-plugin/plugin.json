@@ -1,13 +1,21 @@
 {
   "name": "sublimate",
-  "version": "0.1.0",
-  "description": "Distill Claude Code session history into reusable Workflow scripts. Pattern-mining for agentic engineers.",
-  "author": "Nick Krzemienski",
-  "license": "MIT",
-  "repository": "https://github.com/krzemienski/sublimate",
+  "version": "0.2.0",
+  "description": "Distill Claude Code session history into reusable Workflow scripts and Skills. Mines ~/.claude/projects/ for repeated tool-call patterns, classifies them as Subagent/Skill/Workflow tier, and emits polished candidates.",
+  "author": {
+    "name": "Nick Krzemienski",
+    "email": "nick@krzemienski.com"
+  },
   "homepage": "https://workflows.withagents.dev",
-  "skills": ["sublimate"],
-  "commands": [],
-  "hooks": [],
-  "agents": []
+  "repository": "https://github.com/krzemienski/sublimate",
+  "license": "MIT",
+  "keywords": [
+    "session-mining",
+    "workflows",
+    "skills",
+    "claude-code",
+    "pattern-mining",
+    "prefixspan",
+    "jaccard"
+  ]
 }
